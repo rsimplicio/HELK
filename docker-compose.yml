@@ -163,7 +163,7 @@ services:
     restart: always
     volumes:
       - /etc/machine-id:/etc/machine-id
-      - "$PWD/helk-syslog-ng/syslog-ng.conf":/etc/syslog-ng/syslog-ng.conf
+      - ./helk-syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
       - syslog-ng-data:/data
     ports:
       - "514:514"
@@ -171,11 +171,9 @@ services:
       helk:
         aliases:
           - helk_syslog_ng.hunt.local
-
 networks:
   helk:
     driver: bridge
-
 volumes:
   esdata:
     driver: local
