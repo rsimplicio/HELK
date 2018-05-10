@@ -157,7 +157,7 @@ services:
       helk:
         aliases:
           - helk_kafka_broker.hunt.local 
-  networks:
+networks:
   helk:
     driver: bridge
 volumes:
