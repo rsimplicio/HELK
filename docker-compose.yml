@@ -157,21 +157,7 @@ services:
       helk:
         aliases:
           - helk_kafka_broker.hunt.local 
-  helk-syslog-ng:
-    image: balabit/syslog-ng:latest
-    container_name: helk-syslog-ng
-    restart: always
-    volumes:
-      - /etc/machine-id:/etc/machine-id
-      - ./helk-syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
-      - syslog-ng-data:/data
-    ports:
-      - "514:514"
-    networks:
-      helk:
-        aliases:
-          - helk_syslog_ng.hunt.local
-networks:
+  networks:
   helk:
     driver: bridge
 volumes:
