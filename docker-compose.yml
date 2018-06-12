@@ -20,6 +20,11 @@ services:
   helk-logstash:
     image: cyb3rward0g/helk-logstash:6.2.4
     container_name: helk-logstash
+    ports: 
+      - "514:514" # UDP Syslog
+      - "601:601" # TCP Syslog
+      - "1514:1514" # vmWare
+      - "1515:1515" # vCenter
     volumes:
       - ./helk-logstash/pipeline:/usr/share/logstash/pipeline
     environment:
