@@ -22,7 +22,7 @@ services:
     build: helk-logstash/
     container_name: helk-logstash
     ports: 
-      - "514:514" # Generic Syslog
+      #- "514:514" # Generic Syslog
       - "1514:1514" # VMware ESXi logging
       - "1515:1515" # VMware vCenter logging
       - "8514:8514" # Cisco logging
