@@ -2,12 +2,12 @@
 
 # HELK script: spark-worker-entrypoint.sh
 # HELK script description: Starts Spark Worker Service
-# HELK build version: 0.9 (Alpha)
+# HELK build Stage: Alpha
 # Author: Roberto Rodriguez (@Cyb3rWard0g)
-# License: BSD 3-Clause
+# License: GPL-3.0
 
-ln -sf /dev/stdout $SPARK_WORKER_LOG/spark-worker.out
+ln -sf /dev/stdout $SPARK_LOGS/spark-worker.out
 
 echo "[HELK-DOCKER-INSTALLATION-INFO] Starting Spark Worker Service.."
 exec /$SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker \
-    --webui-port $SPARK_WORKER_WEBUI_PORT $SPARK_MASTER >> $SPARK_WORKER_LOG/spark-worker.out
+    --webui-port $SPARK_WORKER_WEBUI_PORT $SPARK_MASTER >> $SPARK_LOGS/spark-worker.out
